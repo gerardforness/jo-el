@@ -18,34 +18,28 @@ public class Main {
 
             char direccio = sc.next().charAt(0);
 
-            if (direccio == 'L') {
-                for (int j = 0; j < fila.size(); j++) {
-                    if (fila.get(j) == 0) {
-                        fila.remove(j);
-                        fila.add(0);
-                    }
+            for (int j = 0; j < fila.size(); j++) {
+                if (fila.get(j) == 0) {
+                    fila.remove(j);
+                    j--;
                 }
-                for (int j = 0; j < fila.size() - 1; j++) {
-                    if (fila.get(j) == fila.get(j + 1)) {
-                        fila.set(j, fila.get(j) + fila.get(j + 1));
-                        fila.remove(j + 1);
-                        fila.add(0);
-                    }
+            }
+
+            int huecos = fila.size();
+
+            for (int j = 0; j < llargada - huecos; j++) {
+                fila.add(0);
+            }
+
+            for (int j = 0; j < fila.size() - 1; j++) {
+                if (fila.get(j) == fila.get(j + 1)) {
+                    fila.set(j, fila.get(j) + fila.get(j + 1));
+                    fila.remove(j + 1);
+                    fila.add(0);
                 }
-            }else if (direccio == 'R') {
-                for (int j = 0; j < fila.size(); j++) {
-                    if (fila.get(j) == 0) {
-                        fila.remove(j);
-                        fila.add(0);
-                    }
-                }
-                for (int j = 0; j < fila.size() - 1; j++) {
-                    if (fila.get(j) == fila.get(j + 1)) {
-                        fila.set(j, fila.get(j) + fila.get(j + 1));
-                        fila.remove(j + 1);
-                        fila.add(0);
-                    }
-                }
+            }
+
+            if (direccio == 'R') {
                 for (int j = 0; j < fila.size(); j++) {
                     if (fila.get(j) == 0) {
                         fila.remove(j);
