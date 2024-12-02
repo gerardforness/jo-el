@@ -14,15 +14,15 @@ public class Main {
             int posicioimportant = sc.nextInt();
             sc.nextLine();
             ArrayList<Integer> posicionsinicials = new ArrayList<>();
-            ArrayList<Integer> posicionsfinales = new ArrayList<>(posicionsinicials);
             ArrayList<String> posiciotasques = new ArrayList<>();
 
             for (int j = 0; j < numtasques; j++) {
                 posicionsinicials.add(sc.nextInt());
-                sc.nextLine();
-                posiciotasques.add(sc.nextLine());
+                String tasca = sc.nextLine();
+                posiciotasques.add(tasca);
             }
 
+            ArrayList<Integer> posicionsfinales = new ArrayList<>(posicionsinicials);
             Collections.sort(posicionsfinales);
             int busquem = posicionsfinales.get(posicioimportant - 1);
 
